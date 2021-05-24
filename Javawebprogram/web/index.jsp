@@ -15,5 +15,16 @@
         <h1>Hello World!</h1>
         
         <a href="FirstServlet">open FirstServlet</a>
+        <br>
+        
+        
+        <a href="oneservlet?name=tom" >The parameter submitted through the hyperlink,
+            the parameter name is name , the value is tom.</a>
+        
+        <form action="twoservlet" method="POST">
+            What I want to say is:<input type="text" name="msg" value="">
+            <input type="submit" value="submit">
+        
+        </form>
     </body>
 </html>
