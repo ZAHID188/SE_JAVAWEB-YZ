@@ -6,6 +6,7 @@ package cn.edu.djtu;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author zahid
  */
-@WebServlet(name = "twoservlet", urlPatterns = {"/twoservlet"})
-public class twoservlet extends HttpServlet {
+@WebServlet(name = "ShowHeadServlet", urlPatterns = {"/ShowHeadServlet"})
+public class ShowHeadServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -31,13 +32,28 @@ public class twoservlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");//This is for any other language such as bangla, chinese, hindi
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String mymsg= request.getParameter("msg");
-            out.print(mymsg);
-           
+            /*
+             * TODO output your page here. You may use following sample code.
+             */
+            // manually createdservlet 
+            // the name of the file will be a url..
+            // we can find it in the  --http://localhost:8080/Javawebprogram/ShowHeadServlet
+            Enumeration allHeaderName=request.getHeaderNames();
+            out.print("<table>");
+            while(allHeaderName.hasMoreElements()){
+                String headerName=(String) allHeaderName.nextElement();
+                String headerValue=request.getHeader(headerName);
+                out.print("<tr>");
+                out.print("<td>"+headerName+"<td>");
+                out.print("<td>"+headerValue+"<td>");
+                out.print("</tr>");
+                
+                
+            }
+            out.print("</table>");
         } finally {            
             out.close();
         }

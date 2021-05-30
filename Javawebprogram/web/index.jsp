@@ -26,5 +26,18 @@
             <input type="submit" value="submit">
         
         </form>
+        
+        <form action="threeservlet" method="POST">
+            Your favourite  mobile phone:
+            <input type="checkbox" name="cellphone"value="nokia">nokia
+            <input type="checkbox" name="cellphone"value="htcaa">htc
+            <input type="checkbox" name="cellphone"value="apple">apple
+            <input type="submit" value="submit">
+        
+        </form>
+        
+        <!--Showheadservlet.java  becomes a own url don't need to create one -->
+        <a href="http://localhost:8080/Javawebprogram/ShowHeadServlet">click ShowHeadServlet</a>
+        
     </body>
 </html>

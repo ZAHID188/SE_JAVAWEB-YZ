@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author zahid
  */
-@WebServlet(name = "twoservlet", urlPatterns = {"/twoservlet"})
-public class twoservlet extends HttpServlet {
+@WebServlet(name = "threeservlet", urlPatterns = {"/threeservlet"})
+public class threeservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -31,13 +31,15 @@ public class twoservlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");//This is for any other language such as bangla, chinese, hindi
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String mymsg= request.getParameter("msg");
-            out.print(mymsg);
            
+            String[] phones=request.getParameterValues("cellphone");
+            for(String phonename:phones){
+                out.print(phonename);
+                out.println("<br>");
+            }
         } finally {            
             out.close();
         }
