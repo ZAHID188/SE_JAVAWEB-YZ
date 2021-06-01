@@ -13,7 +13,7 @@
     </head>
     <body>
     <h1>User Login</h1>
-        <form method="POST" action="../HandleLoginServlet2">
+        <form method="POST" action="../HandleLoginServlet23">
             Username：<input type="text" name="username" value="" /><br/>
             password：<input type="password" name="userpass" value="" /><br/>
             <input type="submit" value="login" />
