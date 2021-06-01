@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cn.edu.djtu;
+package cn.edu.djtu.lessons;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -43,7 +43,7 @@ public class HandleLoginServlet1 extends HttpServlet {
                 rd.forward(request, response);
             } else {
                 out.print("the username or password is error，please reenter！");
-                RequestDispatcher rd = request.getRequestDispatcher("login1.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("Lesson/login1.jsp");
                 rd.include(request, response);
                 //response.sendRedirect("login.jsp");
             }

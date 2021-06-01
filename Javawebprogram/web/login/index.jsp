@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>This is  a index </h1>
+        <h1>This is  a index page in the lesson folder </h1>
     </body>
 </html>
