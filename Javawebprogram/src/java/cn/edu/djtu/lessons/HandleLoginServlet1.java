@@ -40,11 +40,11 @@ public class HandleLoginServlet1 extends HttpServlet {
             String userpass = request.getParameter("userpass");
             if ("admin".equalsIgnoreCase(username) && "1234".equals(userpass)) {
                 RequestDispatcher rd = request.getRequestDispatcher("Lesson/index.jsp");
-                rd.forward(request, response);
+                rd.forward(request, response);// FORWARD ==this one opens a new page Index in lessons
             } else {
                 out.print("the username or password is error，please reenter！");
                 RequestDispatcher rd = request.getRequestDispatcher("Lesson/login1.jsp");
-                rd.include(request, response);
+                rd.include(request, response);//// INCLUDE ==this one opens a new page AFTER THE PRINT Login
                 //response.sendRedirect("login.jsp");
             }
        
