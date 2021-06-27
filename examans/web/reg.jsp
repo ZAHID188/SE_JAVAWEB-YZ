@@ -12,7 +12,7 @@
         <title>REG Page</title>
     </head>
     <body>
-        <h2>Register</h2>
+        <h2>Login Page Registration </h2>
     
         
         <hr/>
@@ -22,6 +22,7 @@
 	UserPassword：<input type="password" name="userpwd"/><br/>
 			<input type="submit" value="Submit" />
 </form>
+
         <hr/>
        
         <hr/>
