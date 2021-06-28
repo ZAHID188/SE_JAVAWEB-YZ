@@ -77,9 +77,10 @@ public class RegServlet extends HttpServlet {
             
             if (rs.next()) {
                 out.print("The user already exists！");
+                request.getRequestDispatcher("reg.jsp").include(request, response);	
                 //prst.close();
-                RequestDispatcher rd = request.getRequestDispatcher("reg.jsp");
-                rd.include(request, response);
+               /* RequestDispatcher rd = request.getRequestDispatcher("reg.jsp");
+                rd.include(request, response); */
             } else {
                
                 
@@ -89,7 +90,13 @@ public class RegServlet extends HttpServlet {
                 prst.setString(2, pass );
                 prst.executeUpdate();
 		// Redirect the response to 
-		response.sendRedirect("ok.jsp");              ;	
+		response.sendRedirect("ok.jsp");     /*
+                int i= prst.executeUpdate() ;
+				// Redirect the response to ok.jsp
+		if(i>0){
+		//request.requestRedirect("ok.jsp");
+                response.sendRedirect("ok.jsp"); 
+}   */ 
                
                
             }
